@@ -22,8 +22,10 @@ public class Employee {
     private String address;
     private String phoneNumber;
     private String employeeNumber;
+    private boolean isManager;
     @Enumerated(EnumType.STRING)
     private JobTitle jobTitle;
+
 
     @ManyToOne
     @JoinColumn(name = "school_id")

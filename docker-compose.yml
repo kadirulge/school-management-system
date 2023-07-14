@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mysqldb:
+    container_name: sms-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=mysql
+      - MYSQL_USER=mysql
+      - MYSQL_TCP_PORT=3307
+      - VIRTUAL_PORT=3307
+    image: mysql
+    ports:
+      - '3307:3307'
+    expose:
+      - 3307
+    volumes:
+      - mysqldb_data:/data/db
+
+volumes:
+  mysqldb_data:
