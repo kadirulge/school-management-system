@@ -12,3 +12,6 @@
 
 •	Kullanman gerekenler : Java 8+, Spring Boot, MySQL veritabanı, Postman. Önyüz için istediğini kullanabilirsin.
 
+
+
+![sms-db](https://github.com/kadirulge/school-management-system/assets/79600324/030ef3b3-de6d-41df-9006-6a5efd3e5054)
