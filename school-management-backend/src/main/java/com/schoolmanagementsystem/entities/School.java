@@ -24,9 +24,9 @@ public class School {
     private LocalDate dateOfEstablishment;
     private int numberOfClasses;
 
-    @OneToMany(mappedBy = "school")
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
     private List<Student> students;
 
-    @OneToMany(mappedBy = "school")
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
     private List<Employee> employees;
 }
