@@ -10,8 +10,9 @@
 
 •	Her bir veritabanı tablosunun listesini önyüzde tablolar halinde gösterecek şekilde bir frontend geliştirmesi yapılabilir, tasarımı sana kalmış, verileri gösterebildiğimiz bir ekran olsun yeter.
 
-•	Kullanman gerekenler : Java 8+, Spring Boot, MySQL veritabanı, Postman. Önyüz için istediğini kullanabilirsin.
+•	Java 8+, Spring Boot, MySQL veritabanı, Postman. Önyüz için React.
 
 
 
-![sms-db](https://github.com/kadirulge/school-management-system/assets/79600324/030ef3b3-de6d-41df-9006-6a5efd3e5054)
+![sms-db](https://github.com/kadirulge/school-management-system/assets/79600324/c4131605-6647-412c-93e7-972fe1c75423)
+
