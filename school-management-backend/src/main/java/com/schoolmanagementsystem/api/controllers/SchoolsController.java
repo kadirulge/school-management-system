@@ -8,14 +8,14 @@ import com.schoolmanagementsystem.dto.responses.get.GetSchoolResponse;
 import com.schoolmanagementsystem.dto.responses.update.UpdateSchoolResponse;
 import com.schoolmanagementsystem.service.abstracts.SchoolService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/api/schools")
 public class SchoolsController {
     private final SchoolService service;

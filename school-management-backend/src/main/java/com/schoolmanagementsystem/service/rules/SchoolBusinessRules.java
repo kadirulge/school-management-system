@@ -3,11 +3,11 @@ package com.schoolmanagementsystem.service.rules;
 import com.schoolmanagementsystem.common.constants.Messages;
 import com.schoolmanagementsystem.core.exceptions.BusinessException;
 import com.schoolmanagementsystem.repository.SchoolRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SchoolBusinessRules {
     private final SchoolRepository repository;
 

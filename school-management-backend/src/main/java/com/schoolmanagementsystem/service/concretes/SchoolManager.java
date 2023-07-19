@@ -10,14 +10,14 @@ import com.schoolmanagementsystem.entities.School;
 import com.schoolmanagementsystem.repository.SchoolRepository;
 import com.schoolmanagementsystem.service.abstracts.SchoolService;
 import com.schoolmanagementsystem.service.rules.SchoolBusinessRules;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SchoolManager implements SchoolService{
     private final SchoolRepository repository;
     private final ModelMapper mapper;

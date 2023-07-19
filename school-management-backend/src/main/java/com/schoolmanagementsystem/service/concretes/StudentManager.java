@@ -9,14 +9,14 @@ import com.schoolmanagementsystem.dto.responses.update.UpdateStudentResponse;
 import com.schoolmanagementsystem.entities.Student;
 import com.schoolmanagementsystem.repository.StudentRepository;
 import com.schoolmanagementsystem.service.abstracts.StudentService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class StudentManager implements StudentService {
     private final StudentRepository repository;
     private final ModelMapper mapper;

@@ -9,14 +9,14 @@ import com.schoolmanagementsystem.dto.responses.get.GetStudentResponse;
 import com.schoolmanagementsystem.dto.responses.update.UpdateStudentResponse;
 import com.schoolmanagementsystem.service.abstracts.StudentService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/api/students")
 public class StudentsController {
     private final StudentService service;

@@ -9,14 +9,14 @@ import com.schoolmanagementsystem.dto.responses.update.UpdateEmployeeResponse;
 import com.schoolmanagementsystem.entities.Employee;
 import com.schoolmanagementsystem.repository.EmployeeRepository;
 import com.schoolmanagementsystem.service.abstracts.EmployeeService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class EmployeeManager implements EmployeeService {
     private final EmployeeRepository repository;
     private final ModelMapper mapper;
