@@ -6,7 +6,7 @@ import com.schoolmanagementsystem.dto.responses.create.CreateSchoolResponse;
 import com.schoolmanagementsystem.dto.responses.get.GetAllSchoolsResponse;
 import com.schoolmanagementsystem.dto.responses.get.GetSchoolResponse;
 import com.schoolmanagementsystem.dto.responses.update.UpdateSchoolResponse;
-import com.schoolmanagementsystem.service.abstracts.SchoolService;
+import com.schoolmanagementsystem.service.SchoolService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

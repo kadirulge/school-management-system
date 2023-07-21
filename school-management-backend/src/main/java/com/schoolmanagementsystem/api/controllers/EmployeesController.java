@@ -7,7 +7,7 @@ import com.schoolmanagementsystem.dto.responses.create.CreateEmployeeResponse;
 import com.schoolmanagementsystem.dto.responses.get.GetAllEmployeesResponse;
 import com.schoolmanagementsystem.dto.responses.get.GetEmployeeResponse;
 import com.schoolmanagementsystem.dto.responses.update.UpdateEmployeeResponse;
-import com.schoolmanagementsystem.service.abstracts.EmployeeService;
+import com.schoolmanagementsystem.service.EmployeeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

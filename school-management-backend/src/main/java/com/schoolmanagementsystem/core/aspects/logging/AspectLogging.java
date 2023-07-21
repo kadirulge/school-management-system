@@ -12,12 +12,12 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class AspectLogging {
 
-    @Before("execution(* com.schoolmanagementsystem.service.concretes.*.*(..))")
+    @Before("execution(* com.schoolmanagementsystem.service.*.*(..))")
     public void logBefore(JoinPoint joinPoint) {
         log.info(joinPoint.getSignature()+" is invoked");
     }
 
-    @After("execution(* com.schoolmanagementsystem.service.concretes.*.*(..))")
+    @After("execution(* com.schoolmanagementsystem.service.*.*(..))")
     public void logAfter(JoinPoint joinPoint) {
         log.info(joinPoint.getSignature()+" is completed");
     }

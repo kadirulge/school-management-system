@@ -1,4 +1,4 @@
-package com.schoolmanagementsystem.service.concretes;
+package com.schoolmanagementsystem.service;
 
 import com.schoolmanagementsystem.dto.requests.create.CreateEmployeeRequest;
 import com.schoolmanagementsystem.dto.requests.update.UpdateEmployeeRequest;
@@ -8,7 +8,6 @@ import com.schoolmanagementsystem.dto.responses.get.GetEmployeeResponse;
 import com.schoolmanagementsystem.dto.responses.update.UpdateEmployeeResponse;
 import com.schoolmanagementsystem.entities.Employee;
 import com.schoolmanagementsystem.repository.EmployeeRepository;
-import com.schoolmanagementsystem.service.abstracts.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -17,14 +16,14 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class EmployeeManager implements EmployeeService {
+public class EmployeeService {
     private final EmployeeRepository repository;
     private final ModelMapper mapper;
 
-    @Override
+
     public List<GetAllEmployeesResponse> getAll() {
-        List<Employee> employees = repository.findAll();
-        List<GetAllEmployeesResponse> response = employees
+        final List<Employee> employees = repository.findAll();
+        final List<GetAllEmployeesResponse> response = employees
                 .stream()
                 .map(employee -> mapper.map(employee, GetAllEmployeesResponse.class))
                 .toList();
@@ -32,35 +31,34 @@ public class EmployeeManager implements EmployeeService {
         return response;
     }
 
-    @Override
+
     public GetEmployeeResponse getById(int id) {
-        Employee employee = repository.findById(id).orElseThrow();
-        GetEmployeeResponse response = mapper.map(employee, GetEmployeeResponse.class);
+        final Employee employee = repository.findById(id).orElseThrow();
+        final GetEmployeeResponse response = mapper.map(employee, GetEmployeeResponse.class);
 
         return response;
     }
 
-    @Override
+
     public CreateEmployeeResponse add(CreateEmployeeRequest request) {
-        Employee employee = mapper.map(request, Employee.class);
+        final Employee employee = mapper.map(request, Employee.class);
         employee.setId(0);
         repository.save(employee);
-        CreateEmployeeResponse response = mapper.map(employee, CreateEmployeeResponse.class);
+        final CreateEmployeeResponse response = mapper.map(employee, CreateEmployeeResponse.class);
 
         return response;
     }
 
-    @Override
+
     public UpdateEmployeeResponse update(int id, UpdateEmployeeRequest request) {
-        Employee employee = mapper.map(request, Employee.class);
+        final Employee employee = mapper.map(request, Employee.class);
         employee.setId(id);
         repository.save(employee);
-        UpdateEmployeeResponse response = mapper.map(employee, UpdateEmployeeResponse.class);
+        final UpdateEmployeeResponse response = mapper.map(employee, UpdateEmployeeResponse.class);
 
         return response;
     }
 
-    @Override
     public void delete(int id) {
         repository.deleteById(id);
     }
