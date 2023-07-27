@@ -17,5 +17,17 @@ services:
     volumes:
       - mysqldb_data:/data/db
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: sms-keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    command: start-dev
+    volumes:
+      - .:/opt/jboss/keycloak/imports
+
 volumes:
   mysqldb_data:

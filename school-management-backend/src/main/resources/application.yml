@@ -1,6 +1,11 @@
 spring:
   application:
     name: sms-db
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/SchoolManagementSystem/protocol/openid-connect/certs
   datasource:
     username: root
     password: mysql
@@ -11,4 +16,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto:
+server:
+  port: 8081

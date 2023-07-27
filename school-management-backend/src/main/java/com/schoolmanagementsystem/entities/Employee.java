@@ -26,7 +26,6 @@ public class Employee {
     @Enumerated(EnumType.STRING)
     private JobTitle jobTitle;
 
-
     @ManyToOne
     @JoinColumn(name = "school_id")
     private School school;

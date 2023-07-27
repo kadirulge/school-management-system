@@ -38,7 +38,7 @@ public class StudentsController {
     }
 
     @PutMapping("/{id}")
-    public UpdateStudentResponse update(@PathVariable int id, @RequestBody UpdateStudentRequest request) {
+    public UpdateStudentResponse update(@PathVariable int id,@Valid @RequestBody UpdateStudentRequest request) {
         return service.update(id, request);
     }
 
