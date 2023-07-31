@@ -1,5 +1,7 @@
 package com.schoolmanagementsystem.service;
 
+import com.schoolmanagementsystem.common.events.StudentCreatedEvent;
+import com.schoolmanagementsystem.common.producer.RabbitMqProducer;
 import com.schoolmanagementsystem.dto.requests.create.CreateStudentRequest;
 import com.schoolmanagementsystem.dto.requests.update.UpdateStudentRequest;
 import com.schoolmanagementsystem.dto.responses.create.CreateStudentResponse;
@@ -19,7 +21,7 @@ import java.util.List;
 public class StudentService {
     private final StudentRepository repository;
     private final ModelMapper mapper;
-
+    private final RabbitMqProducer producer;
 
     public List<GetAllStudentsResponse> getAll() {
         final List<Student> students = repository.findAll();
@@ -44,6 +46,8 @@ public class StudentService {
         final Student student = mapper.map(request, Student.class);
         student.setId(0);
         repository.save(student);
+
+        sendRabbitMqStudentCreatedEvent(request.getSchoolId());
         final CreateStudentResponse response = mapper.map(student, CreateStudentResponse.class);
 
         return response;
@@ -61,5 +65,11 @@ public class StudentService {
 
     public void delete(int id) {
         repository.deleteById(id);
+    }
+
+
+    private void sendRabbitMqStudentCreatedEvent(int schoolId)
+    {
+        producer.sendMessage(new StudentCreatedEvent(schoolId), "student-created");
     }
 }

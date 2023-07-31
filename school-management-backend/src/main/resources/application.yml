@@ -17,5 +17,20 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+rabbitmq:
+  queue:
+    name: sms-queue
+  exchange:
+    name: sms-exchange
+  routing:
+    key: sms-routing-key
+
+
 server:
   port: 8081

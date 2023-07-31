@@ -17,5 +17,5 @@ public class GetStudentResponse {
     private String address;
     private String phoneNumber;
     private String studentNumber;
-    private GetSchoolResponse school;
+    private int schoolId;
 }
