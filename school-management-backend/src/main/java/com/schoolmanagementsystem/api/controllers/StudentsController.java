@@ -10,19 +10,23 @@ import com.schoolmanagementsystem.dto.responses.update.UpdateStudentResponse;
 import com.schoolmanagementsystem.service.StudentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/students")
 public class StudentsController {
     private final StudentService service;
+    private final MessageSource messageSource;
 
     @GetMapping
-    public List<GetAllStudentsResponse> getAll() {
+    public List<GetAllStudentsResponse> getAll(@RequestHeader(name = "Accept-Language", required = false) Locale locale) {
+        System.out.println(messageSource.getMessage("hello", null, locale));
         return service.getAll();
     }
 

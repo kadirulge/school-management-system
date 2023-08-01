@@ -1,7 +1,5 @@
 package com.schoolmanagementsystem.service;
 
-import com.schoolmanagementsystem.common.events.StudentCreatedEvent;
-import com.schoolmanagementsystem.common.producer.RabbitMqProducer;
 import com.schoolmanagementsystem.dto.requests.create.CreateSchoolRequest;
 import com.schoolmanagementsystem.dto.requests.update.UpdateSchoolRequest;
 import com.schoolmanagementsystem.dto.responses.create.CreateSchoolResponse;

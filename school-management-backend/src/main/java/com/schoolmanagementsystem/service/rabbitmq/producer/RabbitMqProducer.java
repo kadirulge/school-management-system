@@ -1,4 +1,4 @@
-package com.schoolmanagementsystem.common.producer;
+package com.schoolmanagementsystem.service.rabbitmq.producer;
 
 import com.schoolmanagementsystem.common.events.Event;
 import lombok.RequiredArgsConstructor;

@@ -22,6 +22,19 @@ spring:
     port: 5672
     username: guest
     password: guest
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL}
+    password: ${PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
 
 rabbitmq:
   queue:
@@ -30,6 +43,7 @@ rabbitmq:
     name: sms-exchange
   routing:
     key: sms-routing-key
+
 
 
 server:
