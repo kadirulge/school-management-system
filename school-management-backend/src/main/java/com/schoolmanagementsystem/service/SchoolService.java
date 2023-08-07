@@ -1,5 +1,7 @@
 package com.schoolmanagementsystem.service;
 
+import com.schoolmanagementsystem.common.constants.Messages;
+import com.schoolmanagementsystem.core.exceptions.BusinessException;
 import com.schoolmanagementsystem.dto.requests.create.CreateSchoolRequest;
 import com.schoolmanagementsystem.dto.requests.update.UpdateSchoolRequest;
 import com.schoolmanagementsystem.dto.responses.create.CreateSchoolResponse;
@@ -39,8 +41,8 @@ public class SchoolService {
 
     @Cacheable(value="schools",key = "#id")
     public GetSchoolResponse getById(int id) {
-        rules.checkIfSchoolExistsById(id);
-        final School school = repository.findById(id).orElseThrow();
+       // rules.checkIfSchoolExistsById(id);
+        final School school = repository.findById(id).orElseThrow(() -> new BusinessException(Messages.School.NotExists));
         final GetSchoolResponse response = mapper.map(school, GetSchoolResponse.class);
 
         return response;
